@@ -1,0 +1,9 @@
+module CPLD_PWM_test(
+							clk,
+							LED1,
+							LED2,
+							LED3,
+							Driver
+							
+							);
+endmodule

@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at CPLD_PWM_test.v(174): always construct contains both blocking and non-blocking assignments File: D:/Howkey/program/new_test_program/CPLD_PWM_test_2/CPLD_PWM_test.v Line: 174

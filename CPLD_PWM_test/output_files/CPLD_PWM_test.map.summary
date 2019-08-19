@@ -1,0 +1,9 @@
+Analysis & Synthesis Status : Successful - Thu Aug 08 20:09:15 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : CPLD_PWM_test
+Top-level Entity Name : CPLD_PWM_test
+Family : MAX V
+Total logic elements : 166
+Total pins : 15
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

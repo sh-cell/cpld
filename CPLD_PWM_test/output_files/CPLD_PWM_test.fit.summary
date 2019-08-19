@@ -1,0 +1,11 @@
+Fitter Status : Successful - Thu Aug 08 20:09:18 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : CPLD_PWM_test
+Top-level Entity Name : CPLD_PWM_test
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 163 / 1,270 ( 13 % )
+Total pins : 15 / 114 ( 13 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

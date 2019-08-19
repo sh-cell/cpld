@@ -1,0 +1,510 @@
+Timing Analyzer report for CPLD_PWM_test
+Thu Aug 08 20:09:22 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Hold: 'clk'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; CPLD_PWM_test                                       ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M1270ZT144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 119.16 MHz ; 119.16 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -7.392 ; -555.304      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 1.639 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                              ;
++--------+-------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+--------------+--------------+-------------+--------------+------------+------------+
+; -7.392 ; cnt[10]     ; cnt_real[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.059      ;
+; -7.392 ; cnt[10]     ; cnt_real[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.059      ;
+; -7.392 ; cnt[10]     ; cnt_real[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.059      ;
+; -7.392 ; cnt[10]     ; cnt_real[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.059      ;
+; -7.392 ; cnt[10]     ; cnt_real[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.059      ;
+; -7.392 ; cnt[10]     ; cnt_real[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.059      ;
+; -7.392 ; cnt[10]     ; cnt_real[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.059      ;
+; -7.386 ; cnt[10]     ; cnt_real[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.053      ;
+; -7.386 ; cnt[10]     ; cnt_real[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.053      ;
+; -7.386 ; cnt[10]     ; cnt_real[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.053      ;
+; -7.386 ; cnt[10]     ; cnt_real[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.053      ;
+; -7.386 ; cnt[10]     ; cnt_real[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.053      ;
+; -7.386 ; cnt[10]     ; cnt_real[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.053      ;
+; -7.386 ; cnt[10]     ; cnt_real[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.053      ;
+; -7.386 ; cnt[10]     ; cnt_real[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.053      ;
+; -7.382 ; cnt[14]     ; cnt_real[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.049      ;
+; -7.382 ; cnt[14]     ; cnt_real[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.049      ;
+; -7.382 ; cnt[14]     ; cnt_real[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.049      ;
+; -7.382 ; cnt[14]     ; cnt_real[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.049      ;
+; -7.382 ; cnt[14]     ; cnt_real[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.049      ;
+; -7.382 ; cnt[14]     ; cnt_real[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.049      ;
+; -7.382 ; cnt[14]     ; cnt_real[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.049      ;
+; -7.376 ; cnt[14]     ; cnt_real[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.043      ;
+; -7.376 ; cnt[14]     ; cnt_real[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.043      ;
+; -7.376 ; cnt[14]     ; cnt_real[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.043      ;
+; -7.376 ; cnt[14]     ; cnt_real[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.043      ;
+; -7.376 ; cnt[14]     ; cnt_real[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.043      ;
+; -7.376 ; cnt[14]     ; cnt_real[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.043      ;
+; -7.376 ; cnt[14]     ; cnt_real[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.043      ;
+; -7.376 ; cnt[14]     ; cnt_real[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.043      ;
+; -7.343 ; cnt[12]     ; cnt_real[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.010      ;
+; -7.343 ; cnt[12]     ; cnt_real[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.010      ;
+; -7.343 ; cnt[12]     ; cnt_real[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.010      ;
+; -7.343 ; cnt[12]     ; cnt_real[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.010      ;
+; -7.343 ; cnt[12]     ; cnt_real[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.010      ;
+; -7.343 ; cnt[12]     ; cnt_real[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.010      ;
+; -7.343 ; cnt[12]     ; cnt_real[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 8.010      ;
+; -7.324 ; cnt_real[1] ; cnt_real[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.991      ;
+; -7.276 ; cnt[7]      ; cnt_real[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.943      ;
+; -7.276 ; cnt[7]      ; cnt_real[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.943      ;
+; -7.276 ; cnt[7]      ; cnt_real[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.943      ;
+; -7.276 ; cnt[7]      ; cnt_real[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.943      ;
+; -7.276 ; cnt[7]      ; cnt_real[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.943      ;
+; -7.276 ; cnt[7]      ; cnt_real[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.943      ;
+; -7.276 ; cnt[7]      ; cnt_real[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.943      ;
+; -7.261 ; cnt[10]     ; cnt[15]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.928      ;
+; -7.261 ; cnt[10]     ; cnt[14]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.928      ;
+; -7.261 ; cnt[10]     ; cnt[12]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.928      ;
+; -7.261 ; cnt[10]     ; cnt[13]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.928      ;
+; -7.261 ; cnt[10]     ; cnt[9]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.928      ;
+; -7.261 ; cnt[10]     ; cnt[10]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.928      ;
+; -7.261 ; cnt[10]     ; cnt[11]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.928      ;
+; -7.261 ; cnt[10]     ; cnt[8]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.928      ;
+; -7.253 ; cnt_real[3] ; cnt_real[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.920      ;
+; -7.251 ; cnt[14]     ; cnt[15]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.918      ;
+; -7.251 ; cnt[14]     ; cnt[14]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.918      ;
+; -7.251 ; cnt[14]     ; cnt[12]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.918      ;
+; -7.251 ; cnt[14]     ; cnt[13]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.918      ;
+; -7.251 ; cnt[14]     ; cnt[9]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.918      ;
+; -7.251 ; cnt[14]     ; cnt[10]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.918      ;
+; -7.251 ; cnt[14]     ; cnt[11]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.918      ;
+; -7.251 ; cnt[14]     ; cnt[8]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.918      ;
+; -7.195 ; cnt[9]      ; cnt_real[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.862      ;
+; -7.195 ; cnt[9]      ; cnt_real[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.862      ;
+; -7.195 ; cnt[9]      ; cnt_real[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.862      ;
+; -7.195 ; cnt[9]      ; cnt_real[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.862      ;
+; -7.195 ; cnt[9]      ; cnt_real[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.862      ;
+; -7.195 ; cnt[9]      ; cnt_real[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.862      ;
+; -7.195 ; cnt[9]      ; cnt_real[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.862      ;
+; -7.189 ; cnt[9]      ; cnt_real[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.856      ;
+; -7.189 ; cnt[9]      ; cnt_real[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.856      ;
+; -7.189 ; cnt[9]      ; cnt_real[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.856      ;
+; -7.189 ; cnt[9]      ; cnt_real[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.856      ;
+; -7.189 ; cnt[9]      ; cnt_real[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.856      ;
+; -7.189 ; cnt[9]      ; cnt_real[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.856      ;
+; -7.189 ; cnt[9]      ; cnt_real[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.856      ;
+; -7.189 ; cnt[9]      ; cnt_real[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.856      ;
+; -7.088 ; cnt[5]      ; cnt_real[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.755      ;
+; -7.088 ; cnt[5]      ; cnt_real[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.755      ;
+; -7.088 ; cnt[5]      ; cnt_real[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.755      ;
+; -7.088 ; cnt[5]      ; cnt_real[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.755      ;
+; -7.088 ; cnt[5]      ; cnt_real[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.755      ;
+; -7.088 ; cnt[5]      ; cnt_real[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.755      ;
+; -7.088 ; cnt[5]      ; cnt_real[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.755      ;
+; -7.077 ; cnt_real[4] ; cnt_real[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.744      ;
+; -7.064 ; cnt[9]      ; cnt[15]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.731      ;
+; -7.064 ; cnt[9]      ; cnt[14]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.731      ;
+; -7.064 ; cnt[9]      ; cnt[12]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.731      ;
+; -7.064 ; cnt[9]      ; cnt[13]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.731      ;
+; -7.064 ; cnt[9]      ; cnt[9]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.731      ;
+; -7.064 ; cnt[9]      ; cnt[10]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.731      ;
+; -7.064 ; cnt[9]      ; cnt[11]      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.731      ;
+; -7.064 ; cnt[9]      ; cnt[8]       ; clk          ; clk         ; 1.000        ; 0.000      ; 7.731      ;
+; -7.038 ; cnt[12]     ; cnt_real[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.705      ;
+; -7.038 ; cnt[12]     ; cnt_real[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.705      ;
+; -7.038 ; cnt[12]     ; cnt_real[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.705      ;
+; -7.038 ; cnt[12]     ; cnt_real[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.705      ;
+; -7.038 ; cnt[12]     ; cnt_real[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.705      ;
+; -7.038 ; cnt[12]     ; cnt_real[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.705      ;
+; -7.038 ; cnt[12]     ; cnt_real[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.705      ;
++--------+-------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                 ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; 1.639 ; uart_rxd_data_temp[2] ; uart_rxd_data_temp[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.860      ;
+; 1.670 ; uart_txd_test[4]      ; LED1~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.891      ;
+; 1.670 ; uart_txd_test[4]      ; uart_txd_test[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.891      ;
+; 1.678 ; txd_bit_cnt[3]        ; txd_bit_cnt[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.899      ;
+; 1.703 ; uart_txd~reg0         ; uart_txd_test[6]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.924      ;
+; 1.711 ; uart_txd~reg0         ; uart_txd_test[5]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.932      ;
+; 1.712 ; uart_txd~reg0         ; uart_txd_test[7]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.933      ;
+; 1.744 ; rxd_bit_cnt[0]        ; rxd_bit_cnt[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.965      ;
+; 1.762 ; txd_bit_cnt[0]        ; txd_bit_cnt[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.983      ;
+; 1.770 ; txd_bit_cnt[0]        ; txd_bit_cnt[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.991      ;
+; 1.818 ; uart_rxd_0            ; uart_rxd_1            ; clk          ; clk         ; 0.000        ; 0.000      ; 2.039      ;
+; 1.926 ; uart_txd_test[1]      ; uart_txd_test[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.147      ;
+; 1.942 ; uart_txd_test[3]      ; uart_txd_test[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.163      ;
+; 1.967 ; rxd_bit_cnt[3]        ; rxd_bit_cnt[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.188      ;
+; 1.999 ; txd_bit_cnt[1]        ; txd_bit_cnt[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.220      ;
+; 2.107 ; cnt_real[7]           ; cnt_real[7]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
+; 2.116 ; uart_rxd_data_temp[5] ; uart_rxd_data_temp[5] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116 ; uart_rxd_data_temp[4] ; uart_rxd_data_temp[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116 ; uart_rxd_data_temp[7] ; uart_rxd_data_temp[7] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117 ; uart_rxd_data_temp[6] ; uart_rxd_data_temp[6] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; uart_rxd_data_temp[0] ; uart_rxd_data_temp[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.118 ; rxd_baud_cnt[7]       ; rxd_baud_cnt[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.339      ;
+; 2.126 ; cnt_real[15]          ; cnt_real[15]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; cnt[0]                ; cnt[0]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; rxd_baud_cnt[1]       ; rxd_baud_cnt[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; cnt[10]               ; cnt[10]               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; txd_baud_cnt[2]       ; txd_baud_cnt[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.127 ; cnt[5]                ; cnt[5]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.348      ;
+; 2.133 ; cnt[8]                ; cnt[8]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.354      ;
+; 2.134 ; cnt_real[8]           ; cnt_real[8]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.355      ;
+; 2.134 ; cnt[9]                ; cnt[9]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.355      ;
+; 2.135 ; uart_txd_test[5]      ; uart_txd_test[5]      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.356      ;
+; 2.135 ; cnt[7]                ; cnt[7]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.356      ;
+; 2.136 ; cnt_real[5]           ; cnt_real[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.357      ;
+; 2.136 ; txd_baud_cnt[1]       ; txd_baud_cnt[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.357      ;
+; 2.137 ; rxd_baud_cnt[2]       ; rxd_baud_cnt[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.358      ;
+; 2.141 ; txd_baud_cnt[0]       ; txd_baud_cnt[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.362      ;
+; 2.143 ; cnt_real[9]           ; cnt_real[9]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.364      ;
+; 2.144 ; cnt[15]               ; cnt[15]               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.365      ;
+; 2.144 ; txd_baud_cnt[7]       ; txd_baud_cnt[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.365      ;
+; 2.145 ; cnt_real[10]          ; cnt_real[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.366      ;
+; 2.146 ; uart_txd_test[7]      ; uart_txd_test[7]      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.367      ;
+; 2.181 ; uart_txd_flag         ; uart_txd_flag         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.402      ;
+; 2.199 ; rxd_bit_cnt[0]        ; rxd_bit_cnt[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.420      ;
+; 2.200 ; rxd_bit_cnt[2]        ; rxd_bit_cnt[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.421      ;
+; 2.212 ; txd_baud_cnt[3]       ; txd_baud_cnt[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.433      ;
+; 2.213 ; rxd_bit_cnt[1]        ; rxd_bit_cnt[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.434      ;
+; 2.218 ; txd_bit_cnt[0]        ; txd_bit_cnt[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.439      ;
+; 2.230 ; cnt[3]                ; cnt[3]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231 ; cnt[4]                ; cnt[4]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; cnt[1]                ; cnt[1]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; cnt[2]                ; cnt[2]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.232 ; rxd_baud_cnt[3]       ; rxd_baud_cnt[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.453      ;
+; 2.232 ; cnt[11]               ; cnt[11]               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.453      ;
+; 2.233 ; cnt_real[11]          ; cnt_real[11]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.454      ;
+; 2.235 ; uart_rxd_0            ; uart_rxd_data_temp[7] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.456      ;
+; 2.239 ; rxd_baud_cnt[6]       ; rxd_baud_cnt[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.460      ;
+; 2.240 ; cnt_real[14]          ; cnt_real[14]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.461      ;
+; 2.240 ; cnt[6]                ; cnt[6]                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.461      ;
+; 2.248 ; cnt_real[6]           ; cnt_real[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.469      ;
+; 2.249 ; cnt_real[13]          ; cnt_real[13]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.470      ;
+; 2.250 ; uart_txd_test[2]      ; uart_txd_test[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.471      ;
+; 2.250 ; cnt_real[1]           ; cnt_real[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.471      ;
+; 2.250 ; rxd_baud_cnt[4]       ; rxd_baud_cnt[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.471      ;
+; 2.250 ; txd_baud_cnt[5]       ; txd_baud_cnt[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.471      ;
+; 2.251 ; txd_baud_cnt[4]       ; txd_baud_cnt[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.472      ;
+; 2.257 ; uart_txd_test[6]      ; uart_txd_test[6]      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.478      ;
+; 2.260 ; uart_txd_test[0]      ; uart_txd_test[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.481      ;
+; 2.264 ; txd_bit_cnt[0]        ; uart_txd_flag         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.485      ;
+; 2.270 ; cnt_real[3]           ; cnt_real[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.491      ;
+; 2.272 ; cnt[13]               ; cnt[13]               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.493      ;
+; 2.273 ; cnt_real[4]           ; cnt_real[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.494      ;
+; 2.273 ; cnt_real[2]           ; cnt_real[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.494      ;
+; 2.274 ; cnt[14]               ; cnt[14]               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.495      ;
+; 2.274 ; cnt[12]               ; cnt[12]               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.495      ;
+; 2.314 ; txd_bit_cnt[1]        ; txd_bit_cnt[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.535      ;
+; 2.315 ; txd_bit_cnt[2]        ; txd_bit_cnt[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.536      ;
+; 2.327 ; txd_bit_cnt[2]        ; txd_bit_cnt[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.548      ;
+; 2.339 ; uart_rxd_flag         ; uart_rxd_flag         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.560      ;
+; 2.339 ; uart_rxd_flag         ; rxd_bit_cnt[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.560      ;
+; 2.345 ; uart_rxd_0            ; uart_rxd_data_temp[6] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.566      ;
+; 2.346 ; uart_rxd_flag         ; rxd_bit_cnt[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.567      ;
+; 2.352 ; uart_rxd_flag         ; rxd_bit_cnt[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.573      ;
+; 2.353 ; uart_rxd_flag         ; rxd_bit_cnt[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.574      ;
+; 2.452 ; uart_rxd_data_temp[0] ; uart_rxd_data[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.673      ;
+; 2.523 ; rxd_baud_cnt[0]       ; rxd_baud_cnt[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.744      ;
+; 2.533 ; txd_baud_cnt[6]       ; txd_baud_cnt[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.754      ;
+; 2.538 ; cnt_real[12]          ; cnt_real[12]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.759      ;
+; 2.547 ; uart_rxd_data_temp[3] ; uart_rxd_data_temp[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.768      ;
+; 2.556 ; uart_rxd_data_temp[1] ; uart_rxd_data_temp[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.777      ;
+; 2.573 ; uart_rxd_data[0]      ; LED2~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.794      ;
+; 2.598 ; txd_bit_cnt[3]        ; uart_txd~reg0         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.819      ;
+; 2.609 ; txd_bit_cnt[2]        ; uart_txd_flag         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.830      ;
+; 2.620 ; uart_rxd_data_temp[2] ; uart_rxd_data[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.841      ;
+; 2.630 ; rxd_baud_cnt[5]       ; rxd_baud_cnt[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.851      ;
+; 2.669 ; rxd_bit_cnt[1]        ; rxd_bit_cnt[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.890      ;
+; 2.723 ; uart_rxd_data_temp[4] ; uart_rxd_data[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.944      ;
+; 2.738 ; uart_txd_flag         ; uart_txd~reg0         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.959      ;
+; 2.869 ; uart_txd_test[2]      ; LED1~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.090      ;
+; 2.875 ; uart_rxd_0            ; uart_rxd_data_temp[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.096      ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 2043     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 2043     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 60    ; 60   ;
+; Unconstrained Output Ports      ; 8     ; 8    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clk    ; clk   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; rst_n      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; uart_rxd   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; Driver      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED1        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED2        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED3        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pout1       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pout2       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pout3       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; uart_txd    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; rst_n      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; uart_rxd   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; Driver      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED1        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED2        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED3        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pout1       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pout2       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pout3       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; uart_txd    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Thu Aug 08 20:09:21 2019
+Info: Command: quartus_sta CPLD_PWM_test -c CPLD_PWM_test
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'CPLD_PWM_test.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -7.392
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -7.392            -555.304 clk 
+Info (332146): Worst-case hold slack is 1.639
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.639               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4700 megabytes
+    Info: Processing ended: Thu Aug 08 20:09:22 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
